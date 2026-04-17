@@ -4,15 +4,11 @@ def matrix_transpose(A):
     """
     Return the transpose of matrix A (swap rows and columns).
     """
-    # transposne matrix using loops.
-    # SC -> O(i*j)
-    # TC -> O(i*j)
-    i = len(A)
-    j = len(A[0])
-    result = []
-    for r_num in range(0, j):
-        lst = []
-        for c_num in range(0, i):
-            lst.append(A[c_num][r_num])
-        result.append(lst)
-    return np.array(result)
+    # code for ML pipeline
+    # this backed is is C
+    return np.array(A).T
+    # code for optimised python code in SC -> O(1)
+    # n = len(matrix)
+    # for i in range(n):
+    #     for j in range(i + 1, n):
+    #         matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
